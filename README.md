@@ -1,24 +1,10 @@
-# quiz
+# Quiz
 
-## Project setup
-```
-npm install
-```
+This is a simple Quiz App written in Vue 3.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Preview
+!["Quiz Vue 3"](http://web-esse.ru/wp-includes/assets/quiz-vue.png "Quiz Vue 3")
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Technologies used: 
+- Vue 3
+- Animations
