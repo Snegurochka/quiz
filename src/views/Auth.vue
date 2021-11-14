@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <base-card>
     <h2>Log in to your account</h2>
     <div v-if="error" className="error">There was an error!</div>
     <form action="#" method="post">
@@ -16,11 +16,9 @@
         ><span>Password</span>
         <input type="password" name="password" v-model="password" />
       </label>
-      <base-button
-        @callBack="formHandler"
-      >Send</base-button>
+      <base-button @callBack="formHandler">Send</base-button>
     </form>
-  </div>
+  </base-card>
 </template>
 
 <script>
@@ -35,19 +33,13 @@ export default {
   },
   methods: {
     formHandler() {
-        console.log('ok send form');
-        
+      console.log("ok send form");
     },
   },
 };
 </script>
 
 <style scoped>
-.wrapper {
-  margin: 140px auto;
-  max-width: 28rem;
-}
-
 form {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -59,7 +51,7 @@ input {
   height: 2.75rem;
   padding: 0.75rem 1rem;
   margin-top: 0.25rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--darkGrey);
 }
 </style>

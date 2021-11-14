@@ -34,7 +34,7 @@ export default {
 
 <style>
 .result {
-  padding: 24px;
+  width: 100%;
 }
 
 .title {

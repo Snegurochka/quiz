@@ -10,26 +10,26 @@
       </div>
     </div>
     <div class="questions__wrap">
-    <transition-group name="fade">
-      <div
-        class="single-question"
-        v-for="(q, ind) in questions"
-        :key="ind"
-        v-show="ind === questionsAnswered"
-      >
-        <div class="question">{{ q.q }}</div>
-        <div class="answers">
-          <div
-            class="answer"
-            v-for="(answer, ind) in q.answers"
-            :key="ind"
-            @click="setAnswer(answer.is_correct)"
-          >
-            {{ answer.text }}
+      <transition-group name="fade">
+        <div
+          class="single-question"
+          v-for="(q, ind) in questions"
+          :key="ind"
+          v-show="ind === questionsAnswered"
+        >
+          <div class="question">{{ q.q }}</div>
+          <div class="answers">
+            <div
+              class="answer"
+              v-for="(answer, ind) in q.answers"
+              :key="ind"
+              @click="setAnswer(answer.is_correct)"
+            >
+              {{ answer.text }}
+            </div>
           </div>
         </div>
-      </div>
-    </transition-group>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -65,9 +65,9 @@ export default {
   width: 100%;
 }
 
-.questions__wrap{
+.questions__wrap {
   padding: 28px;
-  margin: 28px;
+  margin: 28px 0;
   border: dotted 3px var(--lightGrey);
 }
 .question {
@@ -97,7 +97,6 @@ export default {
 }
 .progress {
   height: 50px;
-  margin-top: 10px;
   background-color: var(--darkGrey);
   position: relative;
 }

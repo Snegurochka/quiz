@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <base-card>
     <transition name="fade" mode="out-in">
       <questions
         :questions="questions"
@@ -15,7 +15,7 @@
     >
       Reset
     </base-button>
-  </div>
+  </base-card>
 </template>
 
 <script>
@@ -51,18 +51,6 @@ export default {
 </script>
 
 <style scoped>
-
-.card {
-  margin: 120px auto;
-  padding-bottom: 24px;
-  max-width: 600px;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  background: var(--white);
-  box-shadow: 0 0 8px -2px rgb(0 0 0 / 10%);
-}
-
 .fade-enter-from {
   opacity: 0;
 }
