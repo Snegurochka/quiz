@@ -2,6 +2,7 @@
   <section>
     <aside>
       sidebar
+      <router-link :to="{ name: 'auth' }"> Login </router-link>
     </aside>
     <main>
       <router-view/>
