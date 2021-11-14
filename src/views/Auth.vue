@@ -16,6 +16,9 @@
         ><span>Password</span>
         <input type="password" name="password" v-model="password" />
       </label>
+      <base-button
+        @callBack="formHandler"
+      >Send</base-button>
     </form>
   </div>
 </template>
@@ -29,6 +32,12 @@ export default {
       username: "",
       password: "",
     };
+  },
+  methods: {
+    formHandler() {
+        console.log('ok send form');
+        
+    },
   },
 };
 </script>

@@ -9,14 +9,12 @@
       />
       <result v-else :results="results" :totalCorrect="totalCorrect" />
     </transition>
-    <button
-      type="button"
+    <base-button
       v-if="questionsAnswered === questions.length"
-      class="reset-btn"
-      @click="reset"
+      @callBack="reset"
     >
       Reset
-    </button>
+    </base-button>
   </div>
 </template>
 
@@ -75,25 +73,5 @@ export default {
   transition: all 0.3s linear;
   opacity: 0;
   position: absolute;
-}
-
-.reset-btn {
-  background-color: var(--primary);
-  border: 0;
-  font-size: 22px;
-  color: var(--white);
-  padding: 10px 25px;
-  margin: 10px auto;
-  display: block;
-  cursor: pointer;
-  transition: all .25s linear;
-}
-
-.reset-btn:active,
-.reset-btn:focus,
-.reset-btn:hover {
-  border: 0;
-  outline: 0;
-  transform: scale(1.1);
 }
 </style>
