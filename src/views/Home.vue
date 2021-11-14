@@ -1,7 +1,7 @@
 <template>
-  <di>
+  <div>
     <router-link :to="{ name: 'quiz' }"> Start </router-link>
-  </di>
+  </div>
 </template>
 
 <script>

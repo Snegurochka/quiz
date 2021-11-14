@@ -1,6 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import Quiz from '../views/Quiz.vue'
+import Quiz from '../views/Quiz.vue';
 
 const routes = [
   {
