@@ -1,16 +1,11 @@
 <template>
-  <button type="button" class="button" @click.prevent="clickHandler">
+  <button type="submit" class="button">
     <slot />
   </button>
 </template>
 
 <script>
 export default {
-  methods: {
-    clickHandler() {
-      this.$emit('callBack');
-    }
-  }
 };
 </script>
 
