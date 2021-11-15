@@ -1,7 +1,8 @@
 <template>
   <section>
-    <side-bar />
-    <back-drop v-if="isMenuOpen" @toggleBackDrop="toggleBackDrop" />
+    <side-bar :isMenuOpen="isMenuOpen" />
+    <back-drop v-if="isMenuOpen" @toggleSidebar="toggleSidebar" />
+    <menu-toggle :isMenuOpen="isMenuOpen" @toggleSidebar="toggleSidebar"/>
     <main>
       <router-view />
     </main>
@@ -11,18 +12,20 @@
 <script>
 import SideBar from "./components/SideBar.vue";
 import BackDrop from "./components/BackDrop.vue";
+import MenuToggle from './components/MenuToggle.vue';
 export default {
   name: "App",
-  components: { SideBar, BackDrop },
+  components: { SideBar, BackDrop, MenuToggle },
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: true
     }
   },
   methods: {
-    toggleBackDrop() {
-      console.log("ok toggleBackDrop");
-    },
+    toggleSidebar() {
+      this.isMenuOpen = !this.isMenuOpen;
+      console.log(this.isMenuOpen);
+    }
   },
 };
 </script>

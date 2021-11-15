@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar" :class="{close: !isMenuOpen}">
     <nav class="navbar">
       <router-link
         v-for="link in links"
@@ -21,6 +21,11 @@ const links = [
 
 export default {
   name: "SideBar",
+  props: {
+      isMenuOpen: {
+          type: Boolean
+      }
+  },
   data() {
     return {
       links,
