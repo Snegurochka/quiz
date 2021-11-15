@@ -36,4 +36,8 @@ body {
   padding-top: 20px;
   background: var(--bg);
 }
+
+.field_error {
+  color: #c01818;
+}
 </style>

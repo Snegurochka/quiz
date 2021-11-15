@@ -2,38 +2,43 @@
   <base-card>
     <h2>Log in to your account</h2>
     <div v-if="error" className="error">There was an error!</div>
-    <form action="#" method="post">
+    <vee-form :validation-schema="schema_login" @submit="login">
       <label
         ><span>Email address</span>
-        <input
+        <vee-field
           type="text"
           name="username"
           placeholder="example@example.com"
-          v-model="username"
         />
+        <ErrorMessage class="field_error" name="username" />
       </label>
       <label
         ><span>Password</span>
-        <input type="password" name="password" v-model="password" />
+        <vee-field type="password" name="password" />
+        <ErrorMessage class="field_error" name="password" />
       </label>
-      <base-button @callBack="formHandler">Send</base-button>
-    </form>
+      <submit-button>Send</submit-button>
+    </vee-form>
   </base-card>
 </template>
 
 <script>
+import SubmitButton from '../components/SubmitButton.vue';
 export default {
+  components: { SubmitButton },
   name: "Auth",
   data() {
     return {
       error: false,
-      username: "",
-      password: "",
+      schema_login: {
+        username: "required|min:3|max:100|email",
+        password: "required|min:3|max:100",
+      },
     };
   },
   methods: {
-    formHandler() {
-      console.log("ok send form");
+    login(val) {
+      console.log(val);
     },
   },
 };

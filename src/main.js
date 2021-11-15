@@ -3,12 +3,14 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import VeeValidatePlugin from './plugins/validation';
+
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 
 const vm = createApp(App);
 
-// TODO BaseComponents
+// BaseComponents
 const requireComponent = require.context(
     "./components",
     false,
@@ -24,5 +26,7 @@ requireComponent.keys().forEach((fileName) => {
 
     vm.component(componentName, componentConfig.default || componentConfig);
 });
+
+vm.use(VeeValidatePlugin);
 
 vm.use(store).use(router).mount('#app')
