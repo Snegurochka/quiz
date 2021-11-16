@@ -1,19 +1,32 @@
 <template>
   <section>
-    <aside>
-      sidebar
-      <router-link :to="{ name: 'auth' }"> Login </router-link>
-    </aside>
+    <side-bar :isMenuOpen="isMenuOpen" />
+    <back-drop v-if="isMenuOpen" @toggleSidebar="toggleSidebar" />
+    <menu-toggle :isMenuOpen="isMenuOpen" @toggleSidebar="toggleSidebar"/>
     <main>
-      <router-view/>
+      <router-view />
     </main>
   </section>
-
 </template>
 
 <script>
+import SideBar from "./components/SideBar.vue";
+import BackDrop from "./components/BackDrop.vue";
+import MenuToggle from './components/MenuToggle.vue';
 export default {
   name: "App",
+  components: { SideBar, BackDrop, MenuToggle },
+  data() {
+    return {
+      isMenuOpen: true
+    }
+  },
+  methods: {
+    toggleSidebar() {
+      this.isMenuOpen = !this.isMenuOpen;
+      console.log(this.isMenuOpen);
+    }
+  },
 };
 </script>
 
@@ -24,9 +37,9 @@ export default {
 :root {
   --bg: #f9fafc;
   --white: #fff;
-  --lightGrey: #F2F3F5;
+  --lightGrey: #f2f3f5;
   --darkGrey: #3f4d67;
-  --primary: #F5C332;
+  --primary: #f5c332;
   --hover: #a3daa4;
 }
 

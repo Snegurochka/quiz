@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .card {
-  margin: 140px auto;
+  margin: 40px auto 0;
   padding: 48px;
   max-width: 600px;
   width: 100%;

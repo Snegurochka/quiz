@@ -6,7 +6,7 @@ import Auth from '../views/Auth.vue';
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home
   },
   {
