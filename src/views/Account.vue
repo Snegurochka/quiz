@@ -3,12 +3,19 @@
 </template>
 
 <script>
+import store from "@/store";
+
 export default {
-    name: "Account",
-    
-}
+  name: "Account",
+  beforeRouteEnter(to, from, next) {
+    if (store.state.isUserLoggedIn) {
+      next();
+    } else {
+      next({ name: "auth" });
+    }
+  },
+};
 </script>
 
 <style>
-
 </style>
