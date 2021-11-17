@@ -7,10 +7,10 @@
         ><span>Email address</span>
         <vee-field
           type="text"
-          name="username"
+          name="email"
           placeholder="example@example.com"
         />
-        <ErrorMessage class="field_error" name="username" />
+        <ErrorMessage class="field_error" name="email" />
       </label>
       <label
         ><span>Password</span>
@@ -31,7 +31,7 @@ export default {
     return {
       error: false,
       schema_login: {
-        username: "required|min:3|max:100|email",
+        email: "required|min:3|max:100|email",
         password: "required|min:3|max:100",
       },
     };
@@ -42,6 +42,7 @@ export default {
       try {
         await this.$store.dispatch("login", val);
       } catch (e) {
+        console.log(e);
         this.error = true;
       }
     },

@@ -12,8 +12,7 @@ export default createStore({
   },
   actions: {
     async login({ commit }, payload) {
-      auth.signInWithEmailAndPassword(payload.email, payload.password);
-
+      await auth.signInWithEmailAndPassword(payload.email, payload.password);
       commit('TOGLE_AUTH');
     },
 
@@ -22,8 +21,8 @@ export default createStore({
         values.email,
         values.password
       );
-        console.log(userCred);
-        
+      console.log(userCred);
+
       await usersCollection.doc(userCred.user.uid).set({
         name: values.name,
         email: values.email,
