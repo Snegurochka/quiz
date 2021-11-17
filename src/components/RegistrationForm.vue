@@ -28,7 +28,7 @@
         <label class="inline-block mb-2">Confirm Password</label>
         <vee-field
           name="confirm_password"
-          type="confirm_password"
+          type="password"
           placeholder="Confirm Password"
         />
         <ErrorMessage class="field_error" name="confirm_password" />
@@ -49,20 +49,21 @@
         Accept terms of service
         <ErrorMessage class="text-red-600" name="tos" />
       </label>
-      <button type="submit" :disabled="reg_in_submission">Submit</button>
+      <submit-button :disabled="reg_in_submission">Submit</submit-button>
     </vee-form>
   </div>
 </template>
 
 <script>
+import SubmitButton from './SubmitButton.vue';
 export default {
+  components: { SubmitButton },
   name: "RegistrationForm",
   data() {
     return {
       schema: {
         name: "required|min:3|max:100|alpha_spaces",
         email: "required|min:3|max:100|email",
-        age: "required|min_value:3|max_value:140",
         password: "required|min:3|max:100",
         confirm_password: "passwords_mismatch:@password",
         country: "required|country_excluded:Mexico",
@@ -76,7 +77,7 @@ export default {
     };
   },
   methods: {
-    async register(values) {
+     async register(values) {
       this.reg_in_submission = true;
       try {
         await this.$store.dispatch("register", values);

@@ -1,5 +1,5 @@
 import { createStore } from 'vuex';
-import { auth } from '../plugins/firebase';
+import { auth, usersCollection } from '../plugins/firebase';
 
 export default createStore({
   state: {
@@ -15,6 +15,26 @@ export default createStore({
       auth.signInWithEmailAndPassword(payload.email, payload.password);
 
       commit('TOGLE_AUTH');
+    },
+
+    async register({ commit }, values) {
+      const userCred = await auth.createUserWithEmailAndPassword(
+        values.email,
+        values.password
+      );
+        console.log(userCred);
+        
+      await usersCollection.doc(userCred.user.uid).set({
+        name: values.name,
+        email: values.email,
+        country: values.country,
+      });
+
+      await userCred.user.updateProfile({
+        displayName: values.name,
+      })
+
+      commit("TOGLE_AUTH");
     },
 
     init_login({ commit }) {
