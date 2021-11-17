@@ -3,11 +3,11 @@ import { auth } from '../plugins/firebase';
 
 export default createStore({
   state: {
-    userLoggedIn: false,
+    isUserLoggedIn: false,
   },
   mutations: {
     TOGLE_AUTH(state) {
-      state.userLoggedIn = !state.userLoggedIn;
+      state.isUserLoggedIn = !state.isUserLoggedIn;
     }
   },
   actions: {
