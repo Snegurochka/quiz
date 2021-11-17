@@ -18,13 +18,12 @@ export default {
   components: { SideBar, BackDrop, MenuToggle },
   data() {
     return {
-      isMenuOpen: true
+      isMenuOpen: false
     }
   },
   methods: {
     toggleSidebar() {
       this.isMenuOpen = !this.isMenuOpen;
-      console.log(this.isMenuOpen);
     }
   },
 };

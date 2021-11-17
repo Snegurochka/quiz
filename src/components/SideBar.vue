@@ -1,5 +1,6 @@
 <template>
-  <aside class="sidebar" :class="{close: !isMenuOpen}">
+  <aside class="sidebar" :class="{ close: !isMenuOpen }">
+    <router-link :to="{ name: 'auth' }"> Login </router-link>
     <nav class="navbar">
       <router-link
         v-for="link in links"
@@ -15,16 +16,15 @@
 <script>
 const links = [
   { route: "home", label: "Home" },
-  { route: "auth", label: "Login" },
   { route: "quiz", label: "Start Quiz" },
 ];
 
 export default {
   name: "SideBar",
   props: {
-      isMenuOpen: {
-          type: Boolean
-      }
+    isMenuOpen: {
+      type: Boolean,
+    },
   },
   data() {
     return {
