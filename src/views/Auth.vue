@@ -1,62 +1,75 @@
 <template>
   <base-card>
-    <h2>Log in to your account</h2>
-    <div v-if="error" className="error">There was an error!</div>
-    <vee-form :validation-schema="schema_login" @submit="login">
-      <label
-        ><span>Email address</span>
-        <vee-field
-          type="text"
-          name="username"
-          placeholder="example@example.com"
-        />
-        <ErrorMessage class="field_error" name="username" />
-      </label>
-      <label
-        ><span>Password</span>
-        <vee-field type="password" name="password" />
-        <ErrorMessage class="field_error" name="password" />
-      </label>
-      <submit-button>Send</submit-button>
-    </vee-form>
+    <ul class="tabs">
+      <li
+        class="tabs__item"
+        :class="{
+          'tabs__item--active': tab === 'login',
+        }"
+      >
+        <a href="#" @click.prevent="togleTab('login')">Login</a>
+      </li>
+      <li
+        class="tabs__item"
+        :class="{
+          'tabs__item--active': tab === 'register',
+        }"
+      >
+        <a @click.prevent="togleTab('register')" href="#">Register</a>
+      </li>
+    </ul>
+
+    <login-form v-show="tab === 'login'" />
+    <registration-form v-show="tab === 'register'" />
   </base-card>
 </template>
 
 <script>
-import SubmitButton from '../components/SubmitButton.vue';
+import LoginForm from "../components/LoginForm.vue";
+import RegistrationForm from "../components/RegistrationForm.vue";
+
 export default {
-  components: { SubmitButton },
   name: "Auth",
+  components: { LoginForm, RegistrationForm },
   data() {
     return {
-      error: false,
-      schema_login: {
-        username: "required|min:3|max:100|email",
-        password: "required|min:3|max:100",
-      },
+      tab: "login",
     };
   },
   methods: {
-    login(val) {
-      console.log(val);
+    togleTab(val) {
+      this.tab = val;
     },
   },
 };
 </script>
 
 <style scoped>
-form {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem;
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 0;
 }
 
-input {
-  width: 100%;
-  height: 2.75rem;
-  padding: 0.75rem 1rem;
-  margin-top: 0.25rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--darkGrey);
+.tabs__item {
+  list-style: none;
+  flex: auto;
+  color: var(--darkGrey);
+}
+
+.tabs__item a {
+  text-decoration: none;
+  color: var(--darkGrey);
+  display: block;
+  padding: 14px 24px;
+}
+
+.tabs__item--active {
+  background-color: var(--primary);
+    transition: all 0.3s linear;
+}
+
+.tabs__item--active a {
+  color: var(--white);
 }
 </style>
