@@ -18,7 +18,11 @@ const routes = [
     path: '/auth',
     name: 'auth',
     component: Auth
-  }
+  },
+  {
+    path: "/:catchAll(.*)*",
+    redirect: { name: "home" },
+  },
 ]
 
 const router = createRouter({
