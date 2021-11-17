@@ -25,6 +25,7 @@
     </div>
 
     <nav class="navbar">
+      <router-link v-if="isUserLoggedIn" :to="{ name: 'account' }">Account</router-link>
       <router-link
         v-for="link in links"
         :key="link.route"
