@@ -56,7 +56,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('isUserLoggedIn'),
+    ...mapState(['isUserLoggedIn']),
   },
 };
 </script>

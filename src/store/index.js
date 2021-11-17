@@ -13,6 +13,7 @@ export default createStore({
   actions: {
     async login({ commit }, payload) {
       auth.signInWithEmailAndPassword(payload.email, payload.password);
+
       commit('TOGLE_AUTH');
     },
 

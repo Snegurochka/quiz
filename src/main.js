@@ -2,32 +2,40 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import './const';
 
 import VeeValidatePlugin from './plugins/validation';
+import { auth } from './plugins/firebase';
 
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 
-const vm = createApp(App);
+let vm;
 
-// BaseComponents
-const requireComponent = require.context(
-    "./components",
-    false,
-    /Base[A-Z]\w+\.(vue|js)$/
-);
+auth.onAuthStateChanged(() => {
+    if (!vm) {
+        vm = createApp(App);
 
-requireComponent.keys().forEach((fileName) => {
-    const componentConfig = requireComponent(fileName);
+        // BaseComponents
+        const requireComponent = require.context(
+            "./components",
+            false,
+            /Base[A-Z]\w+\.(vue|js)$/
+        );
 
-    const componentName = upperFirst(
-        camelCase(fileName.replace(/^\.\/(.*)\.\w+$/, "$1"))
-    );
+        requireComponent.keys().forEach((fileName) => {
+            const componentConfig = requireComponent(fileName);
 
-    vm.component(componentName, componentConfig.default || componentConfig);
-});
+            const componentName = upperFirst(
+                camelCase(fileName.replace(/^\.\/(.*)\.\w+$/, "$1"))
+            );
 
-vm.use(VeeValidatePlugin);
+            vm.component(componentName, componentConfig.default || componentConfig);
+        });
 
-vm.use(store).use(router).mount('#app')
+        vm.use(store);
+        vm.use(router);
+        vm.use(VeeValidatePlugin);
+        vm.mount('#app');
+    }
+})
+
