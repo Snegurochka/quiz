@@ -48,8 +48,9 @@ export default {
 body {
   font-size: 20px;
   font-family: sans-serif;
-  padding-top: 20px;
   background: var(--bg);
+  padding: 0;
+  margin: 0;
 }
 
 .field_error, .error {
