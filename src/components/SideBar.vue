@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 const links = [
   { route: "home", label: "Home" },
   { route: "quiz", label: "Start Quiz" },
@@ -60,7 +60,13 @@ export default {
     ...mapState(["isUserLoggedIn"]),
   },
   methods: {
-    ...mapActions(["signout"]),
+    signout() {
+      this.$store.dispatch("signout");
+
+      if (this.$route.meta.requiresAuth) {
+        this.$router.push({ name: "home" });
+      }
+    }
   },
 };
 </script>

@@ -45,6 +45,8 @@ export default {
         console.log(e);
         this.error = true;
       }
+
+      this.$router.push({ name: "account" });
     },
   },
 };
