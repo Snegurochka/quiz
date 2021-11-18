@@ -1,7 +1,8 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Quiz from '../views/Quiz.vue';
 import Auth from '../views/Auth.vue';
+import Account from '../views/Account.vue';
 
 const routes = [
   {
@@ -18,11 +19,23 @@ const routes = [
     path: '/auth',
     name: 'auth',
     component: Auth
-  }
+  },
+  {
+    path: '/account',
+    name: 'account',
+    meta: {
+      requiresAuth: true,
+    },
+    component: Account
+  },
+  {
+    path: "/:catchAll(.*)*",
+    redirect: { name: "home" },
+  },
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
