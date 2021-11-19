@@ -41,7 +41,7 @@
     <div class="animated animated--2"></div>
 
     <div class="greeting_wrapp">
-      <span>Hi, new friend!</span>
+      <span class="greeting_title">Hi, new friend!</span>
       <p>Train Your Skills</p>
       <ul>
         <li>#Js</li>
@@ -51,7 +51,7 @@
     </div>
 
     <router-link class="paly_btn" :to="{ name: 'quiz' }"
-      ><span class="play_lable">Start</span>
+      >
       <svg
         aria-hidden="true"
         focusable="false"
@@ -67,7 +67,6 @@
           d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
         ></path>
       </svg>
-      <span class="play_border"></span>
     </router-link>
   </div>
 </template>
@@ -87,25 +86,37 @@ export default {
 .bg {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
+  z-index: -1;
 }
 
 .bg:after {
   content: "";
-  height: 58vw;
-  width: 156%;
   background-color: var(--primary);
   position: absolute;
-  transform: rotate(-73deg);
+  width: 100%;
+  height: 300px;
 }
 
 .greeting_wrapp {
-  padding: 140px 180px;
+  padding: 380px 45px 0;
+  box-sizing: content-box;
+}
+
+.greeting_title {
+  position: absolute;
+  top: 116px;
+  font-size: 26px;
 }
 
 .greeting_wrapp p {
-  font-size: 42px;
+  font-size: 54px;
+  font-weight: bold;
+}
+
+.greeting_wrapp ul {
+  padding: 0;
 }
 
 .greeting_wrapp li {
@@ -128,14 +139,6 @@ export default {
   border-radius: 50%;
 }
 
-.play_lable {
-  position: absolute;
-  display: block;
-  top: 20px;
-  left: 10px;
-  font-size: 23px;
-}
-
 .paly_btn svg {
   position: absolute;
   display: block;
@@ -148,22 +151,33 @@ export default {
   transform: scale(1.3);
 }
 
-.play_border {
-  display: block;
+.animated--logo {
   position: absolute;
-  width: 54px;
-  height: 2px;
-  bottom: 34px;
-  right: 4px;
-  border-bottom: 2px dashed var(--darkGrey);
+  animation: anima2 3s infinite ease-in-out;
+}
+
+.animated--logo svg {
+  width: 100%;
+}
+
+.animated--logo1 {
+  width: 40px;
+  right: 86%;
+  top: 210px;
+}
+
+.animated--logo2 {
+  width: 40px;
+  right: 10%;
+  top: 208px;
 }
 
 .animated {
   position: absolute;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
-  border: solid 10px var(--white);
+  border: solid 6px var(--white);
   right: 15%;
   bottom: 30%;
   box-shadow: inset 0 3px 6px 0 rgb(0 0 0 / 9%), 0 3px 6px 0 rgb(0 0 0 / 9%);
@@ -172,29 +186,59 @@ export default {
 
 .animated--1 {
   right: 12%;
-  bottom: 24%;
+  top: 60px;
 }
 
 .animated--2 {
-  right: 26%;
-  bottom: 53%;
+  right: 28%;
+  top: 200px;
 }
 
-.animated--logo {
-  position: absolute;
-  animation: anima2 3s infinite ease-in-out;
-}
+@media (min-width: 1023px) {
+  .bg:after {
+    height: 90vw;
+    left: 185px;
+    width: 156%;
+    transform: rotate(-73deg);
+  }
 
-.animated--logo1 {
-  width: 140px;
-  right: 34%;
-  bottom: 18%;
-}
+  .greeting_wrapp {
+    margin-left: calc(50% - 500px);
+    padding-top: 180px;
+    max-width: 400px;
+  }
 
-.animated--logo2 {
-  width: 140px;
-  right: 10%;
-  bottom: 62%;
+  .greeting_title {
+    top: 180px;
+  }
+
+  .animated {
+    height: 40px;
+    width: 40px;
+    border: solid 10px var(--white);
+  }
+
+  .animated--1 {
+    right: 12%;
+    bottom: 24%;
+  }
+
+  .animated--2 {
+    right: 26%;
+    bottom: 53%;
+  }
+
+  .animated--logo1 {
+    width: 140px;
+    right: 24%;
+    top: 70%;
+  }
+
+  .animated--logo2 {
+    width: 140px;
+    right: 10%;
+    top: 38%;
+  }
 }
 
 @keyframes anima1 {

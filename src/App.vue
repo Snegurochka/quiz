@@ -53,7 +53,8 @@ body {
   margin: 0;
 }
 
-.field_error, .error {
+.field_error,
+.error {
   color: #c01818;
 }
 
