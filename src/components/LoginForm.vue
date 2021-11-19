@@ -8,13 +8,14 @@
         <vee-field
           type="text"
           name="email"
+          class="form-control"
           placeholder="example@example.com"
         />
         <ErrorMessage class="field_error" name="email" />
       </label>
       <label
         ><span>Password</span>
-        <vee-field type="password" name="password" />
+        <vee-field type="password" class="form-control" name="password" />
         <ErrorMessage class="field_error" name="password" />
       </label>
       <submit-button>Send</submit-button>
