@@ -8,38 +8,51 @@
       <!-- Name -->
       <div>
         <label>Name</label>
-        <vee-field name="name" type="text" placeholder="Enter Name" />
+        <vee-field name="name" type="text" class="form-control" placeholder="Enter Name" />
         <ErrorMessage class="field_error" name="name" />
       </div>
       <!-- Email -->
       <div>
         <label>Email</label>
-        <vee-field type="email" name="email" placeholder="Enter Email" />
+        <vee-field type="email" name="email" class="form-control" placeholder="Enter Email" />
         <ErrorMessage class="field_error" name="email" />
       </div>
       <!-- Password -->
       <div>
         <label>Password</label>
-        <vee-field type="password" name="password" placeholder="Password" />
+        <vee-field type="password" name="password" class="form-control" placeholder="Password" />
         <ErrorMessage class="field_error" name="password" />
       </div>
       <!-- Confirm Password -->
       <div>
-        <label class="inline-block mb-2">Confirm Password</label>
+        <label>Confirm Password</label>
         <vee-field
           name="confirm_password"
           type="password"
+          class="form-control"
           placeholder="Confirm Password"
         />
         <ErrorMessage class="field_error" name="confirm_password" />
       </div>
       <!-- Country -->
       <div>
-        <label class="inline-block mb-2">Country</label>
-        <vee-field as="select" name="country">
+        <label>Country</label>
+        <vee-field as="select" class="form-control" name="country">
+          <option value="Austria">Austria</option>
+          <option value="Belarus">Belarus</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Canada">Canada</option>
+          <option value="China">China</option>
+          <option value="Czechia">Czechia</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
           <option value="USA">USA</option>
           <option value="Mexico">Mexico</option>
-          <option value="Germany">Germany</option>
         </vee-field>
         <ErrorMessage class="field_error" name="country" />
       </div>
@@ -47,7 +60,7 @@
       <label>
         <vee-field type="checkbox" name="tos" value="1" />
         Accept terms of service
-        <ErrorMessage class="text-red-600" name="tos" />
+        <ErrorMessage class="field_error" name="tos" />
       </label>
       <submit-button :disabled="reg_in_submission">Submit</submit-button>
     </vee-form>
@@ -55,7 +68,7 @@
 </template>
 
 <script>
-import SubmitButton from './SubmitButton.vue';
+import SubmitButton from "./SubmitButton.vue";
 export default {
   components: { SubmitButton },
   name: "RegistrationForm",
@@ -70,14 +83,14 @@ export default {
         tos: "tos",
       },
       userData: {
-        country: "USA",
+        country: "Germany",
       },
       reg_in_submission: false,
       error: false,
     };
   },
   methods: {
-     async register(values) {
+    async register(values) {
       this.reg_in_submission = true;
       try {
         await this.$store.dispatch("register", values);

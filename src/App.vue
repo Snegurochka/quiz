@@ -70,7 +70,7 @@ form {
   gap: 1.5rem;
 }
 
-input {
+.form-control {
   width: 100%;
   height: 2.75rem;
   padding: 0.75rem 1rem;
