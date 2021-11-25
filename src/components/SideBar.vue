@@ -36,6 +36,20 @@
         {{ link.label }}
       </router-link>
     </nav>
+
+    <div class="languages">
+      <div class="languages__item" @click="changeLanguage('de')">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          viewBox="0 0 640 480"
+        >
+          <path fill="#ffce00" d="M0 320h640v160H0z" />
+          <path d="M0 0h640v160H0z" />
+          <path fill="#d00" d="M0 160h640v160H0z" />
+        </svg>
+      </div>
+    </div>
   </aside>
 </template>
 
@@ -68,6 +82,10 @@ export default {
       if (this.$route.meta.requiresAuth) {
         this.$router.push({ name: "home" });
       }
+    },
+    changeLanguage(language) {
+      console.log(language);
+      this.$i18n.locale = language;
     },
   },
 };
@@ -124,5 +142,13 @@ export default {
 .sidebar a:hover,
 .router-link-active {
   opacity: 0.7;
+}
+
+.languages {
+  display: flex;
+}
+
+.languages__item {
+  cursor: pointer;
 }
 </style>
