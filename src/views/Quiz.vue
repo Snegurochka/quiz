@@ -13,7 +13,7 @@
       v-if="questionsAnswered === questions.length"
       @callBack="reset"
     >
-      Reset
+      {{ $t("quiz.reset") }}
     </base-button>
   </base-card>
 </template>

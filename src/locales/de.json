@@ -1,0 +1,45 @@
+{
+  "common": {
+    "start_btn": "Quiz starten"
+  },
+  "home": {
+    "greeting": "Hallo, neuer Freund!",
+    "skils_title": "Trainiere deine Fähigkeiten"
+  },
+  "account": {
+    "title": "Profil"
+  },
+  "auth": {
+    "login" : "Anmeldung",
+    "register" : "Registrieren"
+  },
+  "quiz": {
+    "reset" : "Zurücksetzen"
+  },
+  "login_form": {
+    "title": "Melde dich in deinem Konto an",
+    "error": "Es gab einen Fehler!",
+    "email": "E-Mail-Addresse",
+    "password": "Passwort",
+    "send_btn": "Senden"
+  },
+  "register": {
+    "accept" : "Ich akzeptiere das Quiz {0}",
+    "TOS": "Nutzungsbedingungen",
+    "submit_btn": "Senden",
+    "country": "Land",
+    "confirm _password": "Passwort bestätigen",
+    "name": "Name",
+    "email": "E-Mail-Addresse",
+    "password": "Passwort"
+  },
+  "sidebar": {
+    "login": "Anmeldung / Registrieren",
+    "logout": "Ausloggen",
+    "account": "Konto"
+  },
+  "questions" : {
+    "status_part" : "von",
+    "status_end" : "fragen beantwortet"
+  }
+}

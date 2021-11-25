@@ -1,0 +1,45 @@
+{
+  "common": {
+    "start_btn": "Start quiz"
+  },
+  "home": {
+    "greeting": "Hi, new friend!",
+    "skils_title": "Train Your Skills"
+  },
+  "account": {
+    "title": "Profile"
+  },
+  "auth": {
+    "login" : "Login",
+    "register" : "Register"
+  },
+  "quiz": {
+    "reset" : "Reset"
+  },
+  "login_form": {
+    "title": "Log in to your account",
+    "error": "There was an error!",
+    "email": "Email address",
+    "password": "Password",
+    "send_btn": "Send"
+  },
+  "register": {
+    "accept" : "I accept Quiz's {0}",
+    "TOS": "Terms of Service",
+    "submit_btn": "Submit",
+    "country": "Country",
+    "confirm _password": "Confirm Password",
+    "name": "Name",
+    "email": "Email address",
+    "password": "Password"
+  },
+  "sidebar": {
+    "login": "Login / Register",
+    "logout": "Logout",
+    "account": "Account"
+  },
+  "questions" : {
+    "status_part" : "out of",
+    "status_end" : "questions answered"
+  }
+}

@@ -7,7 +7,9 @@
           'tabs__item--active': tab === 'login',
         }"
       >
-        <a href="#" @click.prevent="togleTab('login')">Login</a>
+        <a href="#" @click.prevent="togleTab('login')">
+          {{ $t("auth.login") }}
+        </a>
       </li>
       <li
         class="tabs__item"
@@ -15,7 +17,9 @@
           'tabs__item--active': tab === 'register',
         }"
       >
-        <a @click.prevent="togleTab('register')" href="#">Register</a>
+        <a @click.prevent="togleTab('register')" href="#">
+          {{ $t("auth.register") }}
+        </a>
       </li>
     </ul>
 
@@ -48,6 +52,7 @@ export default {
 .tabs {
   display: flex;
   gap: 8px;
+  margin-top: 0;
   padding: 0;
 }
 
@@ -66,7 +71,7 @@ export default {
 
 .tabs__item--active {
   background-color: var(--primary);
-    transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .tabs__item--active a {

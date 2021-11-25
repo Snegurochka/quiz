@@ -7,25 +7,40 @@
     >
       <!-- Name -->
       <div>
-        <label>Name</label>
-        <vee-field name="name" type="text" class="form-control" placeholder="Enter Name" />
+        <label>{{ $t("register.name") }}</label>
+        <vee-field
+          name="name"
+          type="text"
+          class="form-control"
+          placeholder="Enter Name"
+        />
         <ErrorMessage class="field_error" name="name" />
       </div>
       <!-- Email -->
       <div>
-        <label>Email</label>
-        <vee-field type="email" name="email" class="form-control" placeholder="Enter Email" />
+        <label>{{ $t("register.email") }}</label>
+        <vee-field
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Enter Email"
+        />
         <ErrorMessage class="field_error" name="email" />
       </div>
       <!-- Password -->
       <div>
-        <label>Password</label>
-        <vee-field type="password" name="password" class="form-control" placeholder="Password" />
+        <label>{{ $t("register.password") }}</label>
+        <vee-field
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Password"
+        />
         <ErrorMessage class="field_error" name="password" />
       </div>
       <!-- Confirm Password -->
       <div>
-        <label>Confirm Password</label>
+        <label>{{ $t("register.confirm _password") }}</label>
         <vee-field
           name="confirm_password"
           type="password"
@@ -36,7 +51,7 @@
       </div>
       <!-- Country -->
       <div>
-        <label>Country</label>
+        <label>{{ $t("register.country") }}</label>
         <vee-field as="select" class="form-control" name="country">
           <option value="Austria">Austria</option>
           <option value="Belarus">Belarus</option>
@@ -59,10 +74,14 @@
       <!-- TOS -->
       <label>
         <vee-field type="checkbox" name="tos" value="1" />
-        Accept terms of service
+        <i18n-t class="inline-block" keypath="register.accept" tag="label">
+          <a href="#">{{ $t("register.TOS") }}</a>
+        </i18n-t>
         <ErrorMessage class="field_error" name="tos" />
       </label>
-      <submit-button :disabled="reg_in_submission">Submit</submit-button>
+      <submit-button :disabled="reg_in_submission">
+        {{ $t("register.submit_btn") }}
+      </submit-button>
     </vee-form>
   </div>
 </template>
