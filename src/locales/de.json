@@ -23,6 +23,16 @@
     "password": "Passwort",
     "send_btn": "Senden"
   },
+  "register": {
+    "accept" : "Ich akzeptiere das Quiz {0}",
+    "TOS": "Nutzungsbedingungen",
+    "submit_btn": "Senden",
+    "country": "Land",
+    "confirm _password": "Passwort bestätigen",
+    "name": "Name",
+    "email": "E-Mail-Addresse",
+    "password": "Passwort"
+  },
   "sidebar": {
     "login": "Anmeldung / Registrieren",
     "logout": "Ausloggen",

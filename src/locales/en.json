@@ -23,6 +23,16 @@
     "password": "Password",
     "send_btn": "Send"
   },
+  "register": {
+    "accept" : "I accept Quiz's {0}",
+    "TOS": "Terms of Service",
+    "submit_btn": "Submit",
+    "country": "Country",
+    "confirm _password": "Confirm Password",
+    "name": "Name",
+    "email": "Email address",
+    "password": "Password"
+  },
   "sidebar": {
     "login": "Login / Register",
     "logout": "Logout",

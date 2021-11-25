@@ -52,6 +52,7 @@ export default {
 .tabs {
   display: flex;
   gap: 8px;
+  margin-top: 0;
   padding: 0;
 }
 

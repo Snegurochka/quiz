@@ -23,6 +23,16 @@
     "password": "Mot de passe",
     "send_btn": "Envoyer"
   },
+  "register": {
+    "accept" : "J'accepte les {0} du Quiz",
+    "TOS": "Conditions d'utilisation",
+    "submit_btn": "Soumettre",
+    "country": "Pays",
+    "confirm _password": "Confirmer le mot de passe",
+    "name": "Nom",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe"
+  },
   "sidebar": {
     "login": "S'identifier / S'enregistrer",
     "logout": "Se déconnecter",
