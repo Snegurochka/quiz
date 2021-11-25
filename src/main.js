@@ -8,12 +8,13 @@ import { auth } from './plugins/firebase';
 
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
+import i18n from './plugins/i18n'
 
 let vm;
 
 auth.onAuthStateChanged(() => {
     if (!vm) {
-        vm = createApp(App);
+        vm = createApp(App).use(i18n);
 
         // BaseComponents
         const requireComponent = require.context(
