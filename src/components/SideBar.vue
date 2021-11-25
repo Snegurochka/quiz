@@ -33,7 +33,7 @@
         :key="link.route"
         :to="{ name: link.route }"
       >
-        {{ link.label }}
+        {{ link.label[currentLocale] }}
       </router-link>
     </nav>
 
@@ -120,8 +120,8 @@
 <script>
 import { mapState } from "vuex";
 const links = [
-  { route: "home", label: "Home" },
-  { route: "quiz", label: "Start Quiz" },
+  { route: "home", label: { en: "Home", de: "Heim", fr: "Accueil" } },
+  { route: "quiz", label: { en: "Start quiz", de: "Home", fr: "Home" } },
 ];
 
 export default {
@@ -138,6 +138,9 @@ export default {
   },
   computed: {
     ...mapState(["isUserLoggedIn"]),
+    currentLocale() {
+      return this.$i18n.locale;
+    },
   },
   methods: {
     signout() {
