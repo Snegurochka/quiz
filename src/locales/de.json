@@ -1,0 +1,31 @@
+{
+  "common": {
+    "start_btn": "Quiz starten"
+  },
+  "home": {
+    "greeting": "Hallo, neuer Freund!",
+    "skils_title": "Trainiere deine Fähigkeiten"
+  },
+  "account": {
+    "title": "Profil"
+  },
+  "auth": {
+    "login" : "Anmeldung",
+    "register" : "Registrieren"
+  },
+  "quiz": {
+    "reset" : "Zurücksetzen"
+  },
+  "login_form": {
+    "title": "Melde dich in deinem Konto an",
+    "error": "Es gab einen Fehler!",
+    "email": "E-Mail-Addresse",
+    "password": "Passwort",
+    "send_btn": "Senden"
+  },
+  "sidebar": {
+    "login": "Anmeldung / Registrieren",
+    "logout": "Ausloggen",
+    "account": "Konto"
+  }
+}
