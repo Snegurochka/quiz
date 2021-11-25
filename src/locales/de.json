@@ -37,5 +37,9 @@
     "login": "Anmeldung / Registrieren",
     "logout": "Ausloggen",
     "account": "Konto"
+  },
+  "questions" : {
+    "status_part" : "von",
+    "status_end" : "fragen beantwortet"
   }
 }

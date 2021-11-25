@@ -37,5 +37,9 @@
     "login": "S'identifier / S'enregistrer",
     "logout": "Se déconnecter",
     "account": "Compte"
+  },
+  "questions" : {
+    "status_part" : "des",
+    "status_end" : "questions répondues"
   }
 }

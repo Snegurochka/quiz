@@ -6,7 +6,8 @@
         :style="{ width: `${(questionsAnswered / questions.length) * 100}%` }"
       ></div>
       <div class="status">
-        {{ questionsAnswered }} out of {{ questions.length }} questions answered
+        {{ questionsAnswered }} {{ $t("questions.status_part") }}
+        {{ questions.length }} {{ $t("questions.status_end") }}
       </div>
     </div>
     <div class="questions__wrap">

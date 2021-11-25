@@ -37,5 +37,9 @@
     "login": "Login / Register",
     "logout": "Logout",
     "account": "Account"
+  },
+  "questions" : {
+    "status_part" : "out of",
+    "status_end" : "questions answered"
   }
 }
