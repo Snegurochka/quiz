@@ -41,8 +41,8 @@
     <div class="animated animated--2"></div>
 
     <div class="greeting_wrapp">
-      <span class="greeting_title">Hi, new friend!</span>
-      <p>Train Your Skills</p>
+      <span class="greeting_title">{{ $t("home.greeting") }}</span>
+      <p>{{ $t("home.skils_title") }}</p>
       <ul>
         <li>#Js</li>
         <li>#Vue</li>
@@ -50,8 +50,7 @@
       </ul>
     </div>
 
-    <router-link class="paly_btn" :to="{ name: 'quiz' }"
-      >
+    <router-link class="paly_btn" :to="{ name: 'quiz' }">
       <svg
         aria-hidden="true"
         focusable="false"

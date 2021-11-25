@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>Log in to your account</h2>
-    <div v-if="error" class="error">There was an error!</div>
+    <h2>{{ $t("login_form.title") }}</h2>
+    <div v-if="error" class="error">{{ $t("login_form.error") }}</div>
     <vee-form :validation-schema="schema_login" @submit="login">
       <label
-        ><span>Email address</span>
+        ><span>{{ $t("login_form.email") }}</span>
         <vee-field
           type="text"
           name="email"
@@ -14,11 +14,11 @@
         <ErrorMessage class="field_error" name="email" />
       </label>
       <label
-        ><span>Password</span>
+        ><span>{{ $t("login_form.password") }}</span>
         <vee-field type="password" class="form-control" name="password" />
         <ErrorMessage class="field_error" name="password" />
       </label>
-      <submit-button>Send</submit-button>
+      <submit-button>{{ $t("login_form.send_btn") }}</submit-button>
     </vee-form>
   </div>
 </template>

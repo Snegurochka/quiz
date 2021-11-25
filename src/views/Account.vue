@@ -1,6 +1,6 @@
 <template>
-  <base-card
-    ><h3>Profile</h3>
+  <base-card>
+    <h3>{{ $t("account.title") }}</h3>
     <div class="profile__wrapp">
       <div class="avatar">
         <img src="@/assets/avatar.png" alt="" />
@@ -10,7 +10,7 @@
         <span>{{ email }}</span>
       </div>
     </div>
-    <base-button @click="start_quiz">Start quiz</base-button>
+    <base-button @click="start_quiz">{{ $t("common.start_btn") }}</base-button>
   </base-card>
 </template>
 

@@ -1,3 +1,31 @@
 {
-  "message": "hello i18n !!"
+  "common": {
+    "start_btn": "Start quiz"
+  },
+  "home": {
+    "greeting": "Hi, new friend!",
+    "skils_title": "Train Your Skills"
+  },
+  "account": {
+    "title": "Profile"
+  },
+  "auth": {
+    "login" : "Login",
+    "register" : "Register"
+  },
+  "quiz": {
+    "reset" : "Reset"
+  },
+  "login_form": {
+    "title": "Log in to your account",
+    "error": "There was an error!",
+    "email": "Email address",
+    "password": "Password",
+    "send_btn": "Send"
+  },
+  "sidebar": {
+    "login": "Login / Register",
+    "logout": "Logout",
+    "account": "Account"
+  }
 }
