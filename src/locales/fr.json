@@ -1,0 +1,31 @@
+{
+  "common": {
+    "start_btn": "Commencer le quiz"
+  },
+  "home": {
+    "greeting": "Salut, nouvel ami !",
+    "skils_title": "Entraînez vos compétences"
+  },
+  "account": {
+    "title": "Profil"
+  },
+  "auth": {
+    "login" : "Connexion",
+    "register" : "S'inscrire"
+  },
+  "quiz": {
+    "reset" : "Réinitialiser"
+  },
+  "login_form": {
+    "title": "Connectez-vous à votre compte",
+    "error": "Il y avait une erreur!",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "send_btn": "Envoyer"
+  },
+  "sidebar": {
+    "login": "S'identifier / S'enregistrer",
+    "logout": "Se déconnecter",
+    "account": "Compte"
+  }
+}
