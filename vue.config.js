@@ -8,6 +8,14 @@ module.exports = {
       runtimeOnly: false,
       compositionOnly: true,
       fullInstall: true
+    },
+
+    pwa: {
+      name: 'Quiz App',
+      themeColor: '#ff5e3a',
+      mainfestOptions: {
+        short_name: 'Quiz'
+      }
     }
   }
 }

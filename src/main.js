@@ -9,6 +9,7 @@ import { auth } from './plugins/firebase';
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 import i18n from './plugins/i18n'
+import './registerServiceWorker'
 
 let vm;
 
