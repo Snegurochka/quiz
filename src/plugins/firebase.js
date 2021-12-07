@@ -20,4 +20,8 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const db = firebase.firestore();
 
+db.enablePersistence().catch((error) => {
+  console.log(error.code);
+})
+
 export const usersCollection = db.collection('users');
